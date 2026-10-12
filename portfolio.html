@@ -1,0 +1,221 @@
+f<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush G. Kawadkar | Junior Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEF2F8; --surface:#FFFFFF; --ink:#13203D; --muted:#55627F; --line:#CFD8E8;
+  --accent:#2C54F5; --accent-ink:#FFFFFF; --warm:#FFB627;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1730;--surface:#17224A;--ink:#EAF0FF;--muted:#A3B0D3;--line:#2B3A6B;--accent:#7C9BFF;--accent-ink:#0F1730;}
+}
+:root[data-theme="dark"]{--bg:#0F1730;--surface:#17224A;--ink:#EAF0FF;--muted:#A3B0D3;--line:#2B3A6B;--accent:#7C9BFF;--accent-ink:#0F1730;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.logo{font:800 20px var(--head);text-decoration:none}
+nav{display:flex;gap:6px;align-items:center;overflow-x:auto}
+nav a{padding:6px 12px;border-radius:999px;text-decoration:none;font-size:15px;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink);background:var(--surface)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 14px var(--body);cursor:pointer;white-space:nowrap}
+/* hero */
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
+.hero h1{font:800 clamp(44px,8vw,92px)/.95 var(--head);letter-spacing:-.03em;margin:0 0 18px}
+.hero h1 span{display:block;color:var(--accent)}
+.role{font:700 22px var(--head);margin:0 0 14px}
+.lede{color:var(--muted);max-width:52ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font:700 16px var(--head);text-decoration:none;border:2px solid var(--ink);cursor:pointer;background:transparent;color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.badge{aspect-ratio:1;border-radius:50%;background:var(--warm);display:grid;place-items:center;max-width:300px;width:100%;justify-self:center;border:3px solid var(--ink);box-shadow:10px 10px 0 var(--accent)}
+.badge b{font:800 clamp(72px,14vw,120px) var(--head);color:#13203D;letter-spacing:-.04em}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(30px,5vw,44px)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 24px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.about p{margin:0 0 14px;max-width:60ch}
+.facts{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts span{color:var(--muted)}
+.facts b{text-align:right;font-weight:500}
+/* skills */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 18px;font:500 15px var(--body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;min-height:96px}
+.chip{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:10px 16px;font-weight:500}
+/* timeline */
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--accent)}
+.tl li{position:relative;padding:0 0 30px 22px}
+.tl li::before{content:"";position:absolute;left:-33px;top:7px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl h3{font:700 21px var(--head);margin:0}
+.tl small{color:var(--muted);display:block;margin:2px 0 8px}
+.tl p{margin:0;max-width:62ch}
+/* projects */
+.projects{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card.big{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.card h3{font:800 26px/1.15 var(--head);margin:0 0 10px}
+.card p{margin:0 0 16px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.tags li{font-size:14px;border:1.5px solid currentColor;border-radius:999px;padding:2px 12px}
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.contact a.btn{font-size:17px}
+#copied{color:var(--muted);min-height:1.6em;margin:14px 0 0}
+footer{padding:28px 0 40px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero,.about,.projects{grid-template-columns:1fr}
+  .hero{padding-top:44px}
+  .badge{max-width:200px;order:-1;justify-self:start;box-shadow:7px 7px 0 var(--accent)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top">Ayush K.</a>
+  <nav aria-label="Sections">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Dark mode</button>
+</div></header>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Ayush <span>Kawadkar</span></h1>
+      <p class="role">Junior Engineer</p>
+      <p class="lede">Computer Science and Engineering student who builds websites and an AI chatbot. I came up through a diploma, a full-stack internship and now B.Tech, and I want to use my technical and design skills on real projects.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="badge" aria-hidden="true"><b>AK</b></div>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I am a Computer Science and Engineering student with a diploma background and hands-on experience in full-stack development.</p>
+        <p>I completed a 3-month internship, built dynamic websites, and developed an AI chatbot for education. I design interfaces in Figma and Canva and build them in HTML, CSS and JavaScript.</p>
+        <p>I am now exploring cloud and Google technologies, and I completed the Google Cloud Arcade programs.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Studying</span><b>B.Tech, Computer Science and Engineering</b></li>
+        <li><span>Before that</span><b>Diploma</b></li>
+        <li><span>Experience</span><b>3-month full-stack internship</b></li>
+        <li><span>College</span><b>D Y Patil, Pimpri, Pune</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="tabs" role="tablist" aria-label="Skill groups"></div>
+    <div class="chips" id="chips" role="tabpanel" aria-live="polite"></div>
+  </section>
+
+  <section id="journey">
+    <h2>My journey</h2>
+    <ol class="tl">
+      <li><h3>B.Tech, Computer Science and Engineering</h3><small>Now, second year</small><p>Studying data structures and algorithms, and building on everything from my diploma.</p></li>
+      <li><h3>Full-stack development intern</h3><small>3 months</small><p>Worked on real websites and applications, covering both the front end and the back end.</p></li>
+      <li><h3>Diploma</h3><small>Before B.Tech</small><p>Learned C, C++, OOP, Java, DSA, HTML, CSS, JavaScript, Python, Figma and Canva.</p></li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="card big">
+        <h3>AI chatbot for education</h3>
+        <p>A chatbot I built last year to help students learn by asking questions and getting answers.</p>
+        <ul class="tags"><li>AI</li><li>Chatbot</li><li>Education</li></ul>
+      </article>
+      <article class="card">
+        <h3>Dynamic websites</h3>
+        <p>Websites that update with real content, built during my diploma and internship.</p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a class="btn primary" href="mailto:Ayushkawadkar14@email.com">Email me</a>
+      <a class="btn" href="tel:+917498794678">Call +91 7498794678</a>
+      <button class="btn" id="copy" type="button">Copy email address</button>
+    </div>
+    <p id="copied" role="status"></p>
+  </section>
+</main>
+
+<footer><div class="wrap">Ayush G. Kawadkar, Junior Engineer</div></footer>
+
+<script>
+(function(){
+  var groups={
+    "Web":["HTML","CSS","JavaScript","Full-stack development"],
+    "Languages":["C","C++","Java","Python","OOP","Data structures and algorithms"],
+    "Design":["Figma","Canva"],
+    "Cloud":["Google Cloud Arcade"]
+  };
+  var tabs=document.querySelector(".tabs"),chips=document.getElementById("chips");
+  function show(name){
+    chips.innerHTML="";
+    groups[name].forEach(function(s){var d=document.createElement("span");d.className="chip";d.textContent=s;chips.appendChild(d);});
+    tabs.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t.textContent===name?"true":"false");});
+  }
+  Object.keys(groups).forEach(function(n){
+    var b=document.createElement("button");b.type="button";b.className="tab";b.setAttribute("role","tab");b.textContent=n;
+    b.addEventListener("click",function(){show(n);});tabs.appendChild(b);
+  });
+  show("Web");
+
+  var root=document.documentElement,btn=document.getElementById("theme");
+  function isDark(){
+    var t=root.getAttribute("data-theme");
+    if(t)return t==="dark";
+    return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  function label(){btn.textContent=isDark()?"Light mode":"Dark mode";}
+  try{var saved=localStorage.getItem("theme");if(saved)root.setAttribute("data-theme",saved);}catch(e){}
+  label();
+  btn.addEventListener("click",function(){
+    var next=isDark()?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("theme",next);}catch(e){}
+    label();
+  });
+
+  var out=document.getElementById("copied");
+  document.getElementById("copy").addEventListener("click",function(){
+    var email="Ayushkawadkar14@email.com";
+    function ok(){out.textContent="Email address copied.";}
+    function fail(){out.textContent="Could not copy. The address is "+email;}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).then(ok,fail);}else{fail();}
+  });
+})();
+</script>
+</body>
+</html>
